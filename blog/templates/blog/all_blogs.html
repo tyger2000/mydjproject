@@ -1,0 +1,10 @@
+This is the blog page
+<h1>Saurav has written {{blogp.count}} blogs</h1>
+
+{%for blogs in blogp%}
+<a href = "{% url 'blog:detail' blogs.id %}"><h1>{{blogs.title}}</h1></a>
+<h2>{{blogs.description}}</h2>
+<h3>{{blogs.date}}</h3>
+<p>{{blogs.text|truncatechars:200}}
+<a href="{% url 'blog:detail' blogs.id %}">Read More</a></p>
+{%endfor%}
